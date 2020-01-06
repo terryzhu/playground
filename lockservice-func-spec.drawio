@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2020-01-06T02:26:01.035Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36" etag="CqFO1Y_pTiXnC6Xvubot" version="12.4.8" type="github">
+<mxfile host="www.draw.io" modified="2020-01-06T08:14:33.749Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36" etag="Va4gO3tOgiWgPIcIc5jB" version="12.4.8" type="github">
   <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
     <mxGraphModel dx="782" dy="446" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -25,7 +25,7 @@
         <mxCell id="AFSu2onyiTdUrIdWj_2S-27" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="7baba1c4bc27f4b0-3" vertex="1">
           <mxGeometry x="45" y="830" width="10" height="80" as="geometry"/>
         </mxCell>
-        <mxCell id="7baba1c4bc27f4b0-4" value="ETCD" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
+        <mxCell id="7baba1c4bc27f4b0-4" value="Data&lt;br&gt;Persistence" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
           <mxGeometry x="540" y="80" width="100" height="930" as="geometry"/>
         </mxCell>
         <mxCell id="7baba1c4bc27f4b0-16" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="7baba1c4bc27f4b0-4" vertex="1">
@@ -83,7 +83,7 @@
             <mxPoint as="offset"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="AFSu2onyiTdUrIdWj_2S-6" value="&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;lock(&#39;AddNode&#39;, re_entrant=True)&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="7baba1c4bc27f4b0-11" vertex="1" connectable="0">
+        <mxCell id="AFSu2onyiTdUrIdWj_2S-6" value="&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;acquire_lock(&#39;AddNode&#39;, re_entrant=True)&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="7baba1c4bc27f4b0-11" vertex="1" connectable="0">
           <mxGeometry x="0.4363" y="-1" relative="1" as="geometry">
             <mxPoint x="-70" y="-11" as="offset"/>
           </mxGeometry>
@@ -113,7 +113,7 @@
             <mxPoint x="-31" y="-6" as="offset"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="AFSu2onyiTdUrIdWj_2S-11" value="&lt;font style=&quot;font-size: 12px&quot;&gt;lock(&#39;AddDisk&#39;, &lt;br&gt;&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;re_entrant&lt;/span&gt;=True)&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;fontSize=12;" parent="1" target="AFSu2onyiTdUrIdWj_2S-10" edge="1">
+        <mxCell id="AFSu2onyiTdUrIdWj_2S-11" value="&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;acquire_lock&lt;/span&gt;(&#39;AddDisk&#39;, &lt;br&gt;&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;re_entrant&lt;/span&gt;=True)&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;fontSize=12;" parent="1" target="AFSu2onyiTdUrIdWj_2S-10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="300" y="490" as="sourcePoint"/>
           </mxGeometry>
@@ -153,7 +153,7 @@
             <mxPoint x="455" y="550" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="AFSu2onyiTdUrIdWj_2S-24" value="NodeExist and &lt;br&gt;value != &#39;AddNode&#39;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="AFSu2onyiTdUrIdWj_2S-23" vertex="1" connectable="0">
+        <mxCell id="AFSu2onyiTdUrIdWj_2S-24" value="Data exists and &lt;br&gt;value != &#39;AddNode&#39;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="AFSu2onyiTdUrIdWj_2S-23" vertex="1" connectable="0">
           <mxGeometry x="0.3493" y="-6" relative="1" as="geometry">
             <mxPoint x="24" y="-10" as="offset"/>
           </mxGeometry>
@@ -165,7 +165,7 @@
             <mxPoint as="offset"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="AFSu2onyiTdUrIdWj_2S-26" value="&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;unlock(&#39;AddNode&#39;)&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="AFSu2onyiTdUrIdWj_2S-25" vertex="1" connectable="0">
+        <mxCell id="AFSu2onyiTdUrIdWj_2S-26" value="&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;release_lock&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;(&#39;AddNode&#39;)&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="AFSu2onyiTdUrIdWj_2S-25" vertex="1" connectable="0">
           <mxGeometry x="0.4363" y="-1" relative="1" as="geometry">
             <mxPoint x="-70" y="-11" as="offset"/>
           </mxGeometry>
@@ -233,9 +233,9 @@
             <mxPoint as="offset"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="IGkkfEzJJo0-nALvQGHa-6" value="&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;lock(&#39;AddNode&#39;,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;re_entrant&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;=True)&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="IGkkfEzJJo0-nALvQGHa-5" vertex="1" connectable="0">
+        <mxCell id="IGkkfEzJJo0-nALvQGHa-6" value="&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;acquire_lock&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;(&#39;AddNode&#39;,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;re_entrant&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;verdana&amp;#34; ; background-color: rgb(248 , 249 , 250)&quot;&gt;=True)&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="IGkkfEzJJo0-nALvQGHa-5" vertex="1" connectable="0">
           <mxGeometry x="0.4363" y="-1" relative="1" as="geometry">
-            <mxPoint x="-70" y="-11" as="offset"/>
+            <mxPoint x="-59" y="-11" as="offset"/>
           </mxGeometry>
         </mxCell>
         <mxCell id="IGkkfEzJJo0-nALvQGHa-7" value="" style="endArrow=classic;html=1;dashed=1;" parent="1" edge="1">
@@ -258,9 +258,9 @@
             <mxPoint x="-31" y="-6" as="offset"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="IGkkfEzJJo0-nALvQGHa-12" value="NodeExist and &lt;br&gt;value == &#39;AddNode&#39;)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="1" vertex="1" connectable="0">
+        <mxCell id="IGkkfEzJJo0-nALvQGHa-12" value="Data exists and &lt;br&gt;value == &#39;AddNode&#39;)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="490" y="750" as="geometry">
-            <mxPoint x="23" y="-2" as="offset"/>
+            <mxPoint x="28" y="2" as="offset"/>
           </mxGeometry>
         </mxCell>
         <mxCell id="IGkkfEzJJo0-nALvQGHa-13" value="" style="endArrow=classic;html=1;fontSize=12;dashed=1;" parent="1" edge="1">
